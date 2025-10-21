@@ -82,6 +82,7 @@ export const getMovie = (args) => {
       }
       return response.json();
     })
+    .then((data) => data.results)
     .catch((error) => {throw error;});
   };
 
