@@ -60,9 +60,15 @@ export default function MovieCard({ movie, action }) {
       <CardContent>
         <Grid container>
           <Grid size={{ xs: 6 }}>
-            <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
-              new Date({movie.release_date})       </Typography>
+          <Typography variant="h6" component="p">
+          <CalendarIcon fontSize="small" />
+          {new Date(movie.release_date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+          })}
+          </Typography>
+
           </Grid>
           <Grid size={{ xs: 6 }}>
             <Typography variant="h6" component="p">
